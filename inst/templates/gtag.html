@@ -1,0 +1,20 @@
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{id}}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{id}}');
+
+  let sendAnalyticsEvent = function(options) {
+    gtag('event', options.action, {'event_category' : options.category,
+      'event_label' : options.label});
+  }
+  Shiny.addCustomMessageHandler('trackEvent', sendAnalyticsEvent);
+
+  let sendAnalyticsPageView = function(options) {
+    gtag('config', '{{id}}', {'page_path': `\\${options.page_path}`});
+  }
+  Shiny.addCustomMessageHandler('trackPageView', sendAnalyticsPageView);
+</script>

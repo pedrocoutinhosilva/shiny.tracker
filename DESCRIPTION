@@ -1,0 +1,16 @@
+Package: shiny.tracker
+Type: Package
+Title: Track events in your shiny dashboards using Google Analytics, log files or custom functions.
+Version: 0.1.0
+Authors@R: person("Pedro", "Silva", email = "pedrocoutinhosilva@gmail.com",
+  role = c("aut", "cre"))
+Description: Track events in your shiny dashboards using Google Analytics, log files or custom functions.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports:
+  R6,
+  htmltools,
+  glue,
+  readr
+RoxygenNote: 7.1.1
